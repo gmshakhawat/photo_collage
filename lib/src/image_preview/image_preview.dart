@@ -126,7 +126,9 @@ class _ImagePreviewState extends State<ImagePreview> {
           }
 
           final directory = await getApplicationDocumentsDirectory();
-          final imagePath = await File('$path/image.png').create();
+          final imagePath = await File(
+                  '$path/photo_College_${DateTime.now().millisecondsSinceEpoch.toString()}.png')
+              .create();
           await imagePath.writeAsBytes(image);
 
           print("Image Saved");
